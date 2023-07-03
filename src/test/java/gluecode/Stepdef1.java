@@ -19,7 +19,7 @@ public class Stepdef1
         this.sh=x;
     }
     @Given("uri of rest api in {string} environment")
-    public void uri_of_rest_api_in_environment(String env)throws Exception
+    public void method1(String env)throws Exception
     {
         String u;
         if(env.equalsIgnoreCase("QA"))
@@ -37,17 +37,17 @@ public class Stepdef1
         }
     }
     @Given("define HTTP request")
-    public void define_http_request()
+    public void method2()
     {
         sh.request= RestAssured.given();
     }
     @Given("submit request via HTTP GET method")
-    public void submit_request_via_http_get_method()
+    public void method3()
     {
         sh.response=sh.request.when().get();
     }
     @Then("status code is {int} and Content-Type is {string}")
-    public void status_code_is_and_content_type_is(Integer esc, String ect)
+    public void method4(Integer esc, String ect)
     {
            try
            {
@@ -62,12 +62,12 @@ public class Stepdef1
            }
     }
     @When("submit request for id {string} via GET method")
-    public void submit_request_for_id_via_get_method(String id)
+    public void method5(String id)
     {
        sh.response=sh.request.get(id); // x as parameter
     }
     @Then("status code is {string} and id is {string} in json response body")
-    public void status_code_is_and_id_is_in_json_response_body(String esc, String eid)throws Exception
+    public void method6(String esc, String eid)throws Exception
     {
         int x= Integer.parseInt(esc);
         int y = Integer.parseInt(eid);

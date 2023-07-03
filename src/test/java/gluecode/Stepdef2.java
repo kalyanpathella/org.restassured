@@ -13,7 +13,7 @@ public class Stepdef2
     }
 
     @Given("uri of rest api in {string} environment")
-    public void uri_of_rest_api_in_environment(String env)
+    public void uri_of_rest_api_in(String env)
     {
 
     }
